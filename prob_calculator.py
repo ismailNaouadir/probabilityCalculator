@@ -5,15 +5,29 @@ import random
 class Hat:
 
   def __init__(self,**kwargs):
-    content = []
+    self.contents = []
     for key, value in kwargs.items():
-        content.append(key)
+      for i in range(value):
+        self.contents.append(key)
           
 
-
-    
   def get_contents(self):
     return self.contents
+
+
+  def draw(self, number):
+    if number > len(self.contents):
+      return self.contents
+    else:
+      drawList = []
+      for i in range(number):
+        elem = random.choice(self.contents)
+        drawList.append(elem)
+        self.contents.pop( self.contents.index(elem) )
+      return drawList
+
+
+
 
 
 #def experiment(hat, expected_balls, num_balls_drawn, num_experiments):

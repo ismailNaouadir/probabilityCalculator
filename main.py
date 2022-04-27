@@ -2,9 +2,11 @@
 import prob_calculator
 from unittest import main
 
-hat = prob_calculator.Hat(blue=4, red=2, green=6)
+hat = prob_calculator.Hat(blue=1, red=2, green=3)
 
-print(hat.get_contents)
+print(hat.get_contents())
+
+print(hat.draw(6))
 ''''
 prob_calculator.random.seed(95)
 hat = prob_calculator.Hat(blue=4, red=2, green=6)
